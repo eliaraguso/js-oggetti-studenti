@@ -66,19 +66,51 @@ for (let i = 0; i < studenti.length; i++) {
 
 // Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.*/
 
-let nuovoStudente = {
+
+// Dopo 5 secondi da quando il programma mostra la lista studenti, faccio partire i prompt
+setTimeout(function() {
+    let nuovoStudente = {
     
-    "nome" : prompt("Inserisci il nome del nuovo studente."),
+        "nome" : prompt("Inserisci il nome del nuovo studente."),
+    
+        "cognome" : prompt("Inserisci il cognome del nuovo studente."),
+    
+        "eta" : parseInt(prompt("Inserisci l'età del nuovo studente.")),
+    
+    };
+    
 
-    "cognome" : prompt("Inserisci il cognome del nuovo studente."),
+    // inserisco il nuovo oggetto nell'array "studenti"
+    studenti.push(nuovoStudente);
 
-    "eta" : parseInt(prompt("Inserisci l'età del nuovo studente.")),
 
-};
+    // faccio sparire dallo schermo la vecchia lista non aggiornata
+    list.classList.add("hidden");
 
-studenti.push(nuovoStudente);
 
-console.log(studenti);
+
+
+
+    // creo e faccio comparire a video la lista aggiornata con le informazioni del nuovo studente
+    let newList = document.getElementById("newList");
+
+
+    for (let i = 0; i < studenti.length; i++) {
+
+        newList.innerHTML += `<li>
+                                <h3>Nome: ${studenti[i]["nome"]}</h3>
+                                <h4>Cognome: ${studenti[i]["cognome"]}</h4>
+                                <em>Età: ${studenti[i]["eta"]}</em>
+                                <hr>
+                            </li>`;
+        
+    }
+
+}, 
+
+1000
+
+);
 
 
 
