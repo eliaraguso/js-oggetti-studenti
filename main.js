@@ -19,6 +19,32 @@ for (let key in studente) {
     document.getElementById("objectProperties").innerHTML += studente[key] ;
 
 }
+
+// Creare un array di oggetti di studenti.
+
+let studenti = [
+    {
+        "nome" : "Darth",
+        "cognome" : "Vader",
+        "eta" : 50
+    },
+    {
+        "nome" : "Obi-Wan",
+        "cognome" : "Kenobi",
+        "eta" : 40
+    },
+    {
+        "nome" : "Luke",
+        "cognome" : "Skywalker",
+        "eta" : 22
+    },
+    {
+        "nome" : "Ian",
+        "cognome" : "Solo",
+        "eta" : 30
+    }
+];
+
     
 
 
