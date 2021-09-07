@@ -13,12 +13,15 @@ let studente = {
     "eta" : 30
 };
 
+
 // Stampare a schermo attraverso un ciclo for-in tutte le proprietà dell'oggetto.
+
 for (let key in studente) {
         
     document.getElementById("objectProperties").innerHTML += studente[key] ;
 
 }
+
 
 // Creare un array di oggetti di studenti.
 
@@ -44,6 +47,26 @@ let studenti = [
         "eta" : 30
     }
 ];
+
+
+// Ciclare su tutti gli studenti e stampare per ognuno di essi, nome e cognome.
+
+let list = document.getElementById("list");
+
+for (let i = 0; i < studenti.length; i++) {
+
+    list.innerHTML += `<li>
+                            <h3>Nome: ${studenti[i]["nome"]}</h3>
+                            <h4>Cognome: ${studenti[i]["cognome"]}</h4>
+                            <em>Età: ${studenti[i]["eta"]}</em>
+                            <hr>
+                        </li>`;
+    
+}
+
+
+
+
 
     
 
